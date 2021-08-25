@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#xml-input{
+    width: 620px;
+    height: 385px;
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    padding: 5px 5px;
+}
+
+#json-content{
+    width: 620px;
+    height: 385px;
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    padding: 5px 5px;
+}
