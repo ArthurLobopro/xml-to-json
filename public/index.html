@@ -8,7 +8,24 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <textarea id="xml-input"></textarea>
-    <textarea id="json-content"></textarea>
+    <div class="input-wrapper">
+        <div>
+            <div>XML: </div>
+            <textarea id="xml-input"></textarea>
+        </div>
+        <div>
+            <button id="convert">Converter</button>
+        </div>
+    </div>
+    <div class="output-wrapper">
+        <div>
+            <div>JSON: </div>
+            <textarea id="json-content" contenteditable="false" readonly></textarea>
+        </div>
+        <div class="flex">
+            <button id="copy">Copiar JSON</button>
+            <button id="select-json">Selecionar Conteúdo</button>
+        </div>
+    </div>
 </body>
 </html>
