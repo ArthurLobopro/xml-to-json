@@ -8,16 +8,20 @@ const appPath = app.getAppPath()
 function createWindow() {
     const win = new BrowserWindow({
         width: 800,
-        height: 530,
+        height: 500,
         minWidth: 800,
         minHeight: 530,
         autoHideMenuBar: true,
+        frame: false,
+        show: false,
+        icon: path.resolve(appPath, 'assets','icon.png'),
         webPreferences: {
             nodeIntegration: true,
             preload: path.join(__dirname, 'preload.js')
         }
     })
     win.loadFile(path.resolve(appPath, 'public', 'index.html'))
+    win.on('ready-to-show', () => win.show())
 }
 
 const isUnicWindow = app.requestSingleInstanceLock() //Verifica se o app já foi iniciado
