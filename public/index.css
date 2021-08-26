@@ -32,15 +32,6 @@ body{
     white-space: pre;
 }
 
-/* #json-content{
-    width: 620px;
-    height: 385px;
-    resize: none;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 5px 5px;
-    white-space: pre;
-} */
-
 button{
     background-color: #0D6EFD;
     color: white;
