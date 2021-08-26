@@ -1,6 +1,7 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
-const fs = require('fs')
+
+require('./mainEvents')
 
 const appPath = app.getAppPath()
 
@@ -44,20 +45,6 @@ app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createWindow()
     }
-})
-
-ipcMain.handle('open-file', async () => {
-    return dialog.showOpenDialog({
-        properties: ['openFile'],
-        filters: [{ name: 'Arquivos xml', extensions: ['xml'] }]
-    })
-        .then(res => {
-            return res.canceled === true ? '' : fs.readFileSync(res.filePaths[0], { encoding: 'utf-8' })
-        })
-})
-
-ipcMain.on('request-app-path', (event) => {
-    event.returnValue = appPath
 })
 
 // Faz com que o programa não inicie várias vezes durante a instalação
