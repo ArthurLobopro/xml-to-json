@@ -1,6 +1,7 @@
 import { delay, copy } from './Util.js'
 
 const parser = require('fast-xml-parser')
+const { ipcRenderer } = require('electron')
 
 const xmlInput = document.getElementById('xml-input')
 const jsonContentTextarea = document.getElementById('json-content')
@@ -29,10 +30,17 @@ async function parseXML() {
     jsonContentTextarea.textContent = JSON.stringify(jsonObj, null, 4)
 }
 
-const convertButton = document.getElementById('convert')
 
 xmlInput.onpaste = parseXML
+
+const convertButton = document.getElementById('convert')
 convertButton.onclick = parseXML
+
+const openFileButton = document.getElementById('open-file')
+openFileButton.onclick = async () => {
+    const content = await ipcRenderer.invoke('open-file')
+    xmlInput.textContent = content
+}
 
 const copyButton = document.getElementById('copy')
 copyButton.onclick = () => {

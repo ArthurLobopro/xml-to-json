@@ -1,5 +1,6 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
+const fs = require('fs')
 
 const appPath = app.getAppPath()
 
@@ -7,6 +8,8 @@ function createWindow() {
     const win = new BrowserWindow({
         width: 800,
         height: 530,
+        minWidth: 800,
+        minHeight: 530,
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
@@ -41,6 +44,16 @@ app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createWindow()
     }
+})
+
+ipcMain.handle('open-file', async () => {
+    return dialog.showOpenDialog({
+        properties: ['openFile'],
+        filters: [{ name: 'Arquivos xml', extensions: ['xml'] }]
+    })
+        .then(res => {
+            return res.canceled === true ? '' : fs.readFileSync(res.filePaths[0], { encoding: 'utf-8' })
+        })
 })
 
 ipcMain.on('request-app-path', (event) => {
