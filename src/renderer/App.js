@@ -7,14 +7,14 @@ const xmlInput = document.getElementById('xml-input')
 const jsonContentTextarea = document.getElementById('json-content')
 
 const options = {
-    attributeNamePrefix : "",
+    attributeNamePrefix: "",
     attrNodeName: "",
-    textNodeName : "#text",
-    ignoreAttributes : false,
-    ignoreNameSpace : false,
-    allowBooleanAttributes : true,
-    parseNodeValue : true,
-    parseAttributeValue : true,
+    textNodeName: "#text",
+    ignoreAttributes: false,
+    ignoreNameSpace: false,
+    allowBooleanAttributes: true,
+    parseNodeValue: true,
+    parseAttributeValue: true,
     trimValues: true,
     cdataTagName: "__cdata",
     cdataPositionChar: "\\c",
@@ -26,7 +26,7 @@ const options = {
 async function parseXML() {
     await delay(100)
     const xmlString = xmlInput.value
-    const jsonObj = parser.parse(xmlString,options)
+    const jsonObj = parser.parse(xmlString, options)
     jsonContentTextarea.textContent = JSON.stringify(jsonObj, null, 4)
 }
 
@@ -40,6 +40,7 @@ const openFileButton = document.getElementById('open-file')
 openFileButton.onclick = async () => {
     const content = await ipcRenderer.invoke('open-file')
     xmlInput.textContent = content
+    parseXML()
 }
 
 const copyButton = document.getElementById('copy')
@@ -52,3 +53,6 @@ const selectButton = document.getElementById("select-json")
 selectButton.onclick = () => {
     jsonContentTextarea.select()
 }
+
+const saveButton = document.getElementById('save-json')
+saveButton.onclick = () => ipcRenderer.send('save', { content: jsonContentTextarea.textContent })
