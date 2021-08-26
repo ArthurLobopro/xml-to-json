@@ -8,22 +8,53 @@ body{
     width: 100vw;
     height: 100vh;
     display: flex;
+    padding: 10px;
+    justify-content: space-around;
+
 }
 
-#xml-input{
+.input-wrapper, .output-wrapper {
+    overflow: hidden;
+    width: 45%;
+}
+
+.flex{
+    display: flex;
+}
+
+#xml-input, #json-content{
+    width: 620px;
+    height: 385px;
+    max-width: 100%;
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px 5px;
+    white-space: pre;
+}
+
+/* #json-content{
     width: 620px;
     height: 385px;
     resize: none;
     font-family: 'Courier New', Courier, monospace;
-    margin: auto;
     padding: 5px 5px;
+    white-space: pre;
+} */
+
+button{
+    background-color: #0D6EFD;
+    color: white;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 3px;
+    width: max-content;
+    box-sizing: content-box;
+    padding: 3px 8px;
+    display: flex;
+    align-items: center;
 }
 
-#json-content{
-    width: 620px;
-    height: 385px;
-    resize: none;
-    font-family: 'Courier New', Courier, monospace;
-    margin: auto;
-    padding: 5px 5px;
+button + button{
+    margin: auto 5px;
 }
