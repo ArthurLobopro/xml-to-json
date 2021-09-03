@@ -25,12 +25,18 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "name": "XML Converter",
+        "executableName": "xml-converter",
+        "icon": "./build/icon.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "xml_to_json"
+            "name": "xml-to-json",
+            "description": "Conversor de XML para JSON",
+            "authors": "Arthur Lobo"
           }
         },
         {
