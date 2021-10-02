@@ -43,16 +43,16 @@ openFileButton.onclick = async () => {
     parseXML()
 }
 
-const copyButton = document.getElementById('copy')
-copyButton.onclick = () => {
+const copyJsonButton = document.getElementById('copy-json')
+copyJsonButton.onclick = () => {
     const text = jsonContentTextarea.textContent
     copy(text)
 }
 
-const selectButton = document.getElementById("select-json")
-selectButton.onclick = () => {
+const selectJsonButton = document.getElementById("select-json")
+selectJsonButton.onclick = () => {
     jsonContentTextarea.select()
 }
 
-const saveButton = document.getElementById('save-json')
-saveButton.onclick = () => ipcRenderer.send('save', { content: jsonContentTextarea.textContent })
+const saveJsonButton = document.getElementById('save-json')
+saveJsonButton.onclick = () => ipcRenderer.send('save', { content: jsonContentTextarea.textContent })

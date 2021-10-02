@@ -10,26 +10,31 @@
     <link rel="icon" href="../assets/icon.svg">
 </head>
 <body>
-    <div class="input-wrapper">
-        <div>
-            <div>XML: </div>
-            <textarea id="xml-input"></textarea>
+    <div id="xml-to-json">
+        <div class="input-wrapper">
+            <div>
+                <div>XML: </div>
+                <textarea id="xml-input"></textarea>
+            </div>
+            <div class="flex">
+                <button id="convert">Converter</button>
+                <button id="open-file">Abrir Arquivo</button>
+            </div>
         </div>
-        <div class="flex">
-            <button id="convert">Converter</button>
-            <button id="open-file">Abrir Arquivo</button>
+        <div class="output-wrapper">
+            <div>
+                <div>JSON: </div>
+                <textarea id="json-content" contenteditable="false" readonly></textarea>
+            </div>
+            <div class="flex">
+                <button id="copy-json">Copiar JSON</button>
+                <button id="select-json">Selecionar Conteúdo</button>
+                <button id="save-json">Salvar JSON</button>
+            </div>
         </div>
     </div>
-    <div class="output-wrapper">
-        <div>
-            <div>JSON: </div>
-            <textarea id="json-content" contenteditable="false" readonly></textarea>
-        </div>
-        <div class="flex">
-            <button id="copy">Copiar JSON</button>
-            <button id="select-json">Selecionar Conteúdo</button>
-            <button id="save-json">Salvar JSON</button>
-        </div>
+    <div id="json-to-xml">
+
     </div>
 </body>
 </html>
