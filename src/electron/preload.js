@@ -1,5 +1,7 @@
-const { contextBridge, ipcRenderer } = require('electron')
-const path = require('path')
+const { contextBridge } = require('electron')
+const { insertFrame } = require('electron-frame/renderer')
+
+contextBridge.exposeInMainWorld('require', require)
 
 const injectScript = (src, type = '') => {
     const script = document.createElement('script')
@@ -8,10 +10,8 @@ const injectScript = (src, type = '') => {
     document.head.appendChild(script)
 }
 
-const makeHeader = require('../renderer/window-header/makeHeader')
 
 window.addEventListener('DOMContentLoaded', () => {
     injectScript("../src/renderer/App.js", "module")
-    contextBridge.exposeInMainWorld('require', require)
-    document.body.appendChild(makeHeader())
+    insertFrame()
 })

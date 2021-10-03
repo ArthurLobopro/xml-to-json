@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const { mainWindowControlEvents } = require('electron-frame/main')
+
+mainWindowControlEvents.init()
 
 require('./mainEvents')
 
@@ -11,17 +14,14 @@ function createWindow() {
         height: 500,
         minWidth: 800,
         minHeight: 530,
-        autoHideMenuBar: true,
         frame: false,
-        show: false,
-        icon: path.resolve(appPath, 'assets','icon.png'),
+        icon: path.resolve(appPath, 'assets', 'icon.png'),
         webPreferences: {
             nodeIntegration: true,
             preload: path.join(__dirname, 'preload.js')
         }
     })
     win.loadFile(path.resolve(appPath, 'public', 'index.html'))
-    win.on('ready-to-show', () => win.show())
 }
 
 const isUnicWindow = app.requestSingleInstanceLock() //Verifica se o app já foi iniciado
