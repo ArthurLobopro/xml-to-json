@@ -33,6 +33,6 @@ ipcMain.on('save', async (event, arg) => {
     }
 
     fs.writeFile(filePath, content, (err, result) => {
-        console.log(`Erro: ${err}\nResultado: ${result}`)
+        dialog.showErrorBox("Não foi possível salvar o arquivo", `Erro: ${err}\nResultado: ${result}`)
     })
 })
