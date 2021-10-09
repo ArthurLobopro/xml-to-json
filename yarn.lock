@@ -251,7 +251,7 @@
     "@electron-forge/template-base" "6.0.0-beta.59"
     fs-extra "^10.0.0"
 
-"@electron/get@^1.0.1", "@electron/get@^1.6.0", "@electron/get@^1.9.0":
+"@electron/get@^1.13.0", "@electron/get@^1.6.0", "@electron/get@^1.9.0":
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/@electron/get/-/get-1.13.0.tgz#95c6bcaff4f9a505ea46792424f451efea89228c"
   integrity sha512-+SjZhRuRo+STTO1Fdhzqnv9D2ZhjxXP6egsJ9kiO8dtP68cDx7dFCwWi64dlMQV7sWcfW1OYCW4wviEBzmRsfQ==
@@ -981,10 +981,10 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-electron-frame@0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/electron-frame/-/electron-frame-0.4.1.tgz#e37fa727dc99a15bc3fa213739b822d08d5d878f"
-  integrity sha512-QqMhfcd8+PKOxlrgUKKhDSjXLuLHruMDK/UGVWb7PH6a9VaDg8qY3XDsvuykIu+eEoP5Clq1dG0wEID5Jkeo2w==
+electron-frame@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/electron-frame/-/electron-frame-0.5.0.tgz#6710b66308cd3cd37db3f4a97a14602c5292016b"
+  integrity sha512-KpeftIgGiYxOmWDQw4TmvZ0q107vvW7e1PQYLmfwFsuHNea6TfhZ8ZF9h9wTwKP6tLH239MIrBvSwVaro9O2og==
 
 electron-installer-common@^0.10.2:
   version "0.10.3"
@@ -1110,12 +1110,12 @@ electron-winstaller@^5.0.0:
     lodash.template "^4.2.2"
     temp "^0.9.0"
 
-electron@^13.2.2:
-  version "13.5.1"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-13.5.1.tgz#76c02c39be228532f886a170b472cbd3d93f0d0f"
-  integrity sha512-ZyxhIhmdaeE3xiIGObf0zqEyCyuIDqZQBv9NKX8w5FNzGm87j4qR0H1+GQg6vz+cA1Nnv1x175Zvimzc0/UwEQ==
+electron@15.1.2:
+  version "15.1.2"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-15.1.2.tgz#be1e362ab7307e38155709b0862e6a87f5e748b3"
+  integrity sha512-cU5x1ZvhwcTtzClJrsxqbvCocs40uhuXcdXbXFMpe6XnbnjruTbwrB2V0OxN01pStDrYihnfKo2yhfEvhO3zmw==
   dependencies:
-    "@electron/get" "^1.0.1"
+    "@electron/get" "^1.13.0"
     "@types/node" "^14.6.2"
     extract-zip "^1.0.3"
 
