@@ -15,6 +15,7 @@ function createWindow() {
         minWidth: 800,
         minHeight: 530,
         frame: false,
+        show: false,
         icon: path.resolve(appPath, 'assets', 'icon.png'),
         webPreferences: {
             nodeIntegration: true,
@@ -22,6 +23,8 @@ function createWindow() {
         }
     })
     win.loadFile(path.resolve(appPath, 'public', 'index.html'))
+
+    win.on('ready-to-show', () => win.show())
 }
 
 const isUnicWindow = app.requestSingleInstanceLock() //Verifica se o app já foi iniciado
