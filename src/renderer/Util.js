@@ -11,4 +11,4 @@ const copy = text => {
     //.then(() => alert("Copiado para área de transferência!"))
 }
 
-export { delay, copy }
+module.exports =  { delay, copy }

@@ -1,4 +1,4 @@
-import { delay, copy } from './Util.js'
+const { delay, copy } = require('./Util.js')
 
 const parser = require('fast-xml-parser')
 const { ipcRenderer } = require('electron')
